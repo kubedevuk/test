@@ -5,16 +5,16 @@ The aim of this Starter is to have a full-fledged working App + API ready to use
 
 Aims/includes:
 
- - Auth
-  -- Throwaway/one-time accounts
-  -- Magic email link  
- - Secure
- - Database
-  -- Migrations
-  -- Backups
-  -- Rollback
-  -- Upload
- - SEO defaults
-   -- OG Image setup
- - Docker setup/deploy
- - Caddy file setup
+* Auth
+** Throwaway/one-time accounts
+** Magic email link  
+* Secure
+* Database
+** Migrations
+** Backups
+** Rollback
+** Upload
+* SEO defaults
+** OG Image setup
+* Docker setup/deploy
+* Caddy file setup
