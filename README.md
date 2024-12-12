@@ -7,7 +7,8 @@ Aims/includes:
 
 - Auth
   - Throwaway/one-time accounts
-  - Magic email link  
+  - Magic email link
+  - Login / Logout
 - Secure
 - Database
   - Migrations
@@ -16,5 +17,14 @@ Aims/includes:
   - Upload
 - SEO defaults
   - OG Image setup
+- Health API Endpoint
 - Docker setup/deploy
 - Caddy file setup
+
+
+Where possible not re-inventing the wheel but using popular 3rd party efforts.
+
+- VueUse
+- BetterSqlite3
+- ?HeadlessUI Components?
+- 
