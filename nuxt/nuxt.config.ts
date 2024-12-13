@@ -56,15 +56,12 @@ export default defineNuxtConfig({
     client: !isProd,
   },
   robots: {
-    allow: ["/", "/new", "/login", "/event/**"],
-    disallow: ["/user"],
+    allow: ["/"],
+    disallow: [""],
   },
   routeRules: {
     // Homepage pre-rendered at build time
     "/": { cors: true, ssr: true },
-    "/about": { cors: true, ssr: true },
-    "/experience": { cors: true, ssr: true },
-    "/contact": { cors: true, ssr: true },
   },
   nitro: {
     minify: true,

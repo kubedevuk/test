@@ -1,7 +1,7 @@
 {
-  "name": "tmbeta consulting",
-  "version": "0.1.4",
-  "description": "tm beta consulting ltd || Senior Consultant - Retail, Digital and Process Business Analyst for hire",
+  "name": "{{ APP_NAME }}",
+  "version": "0.0.0",
+  "description": "{{ APP_NAME }} || {{ APP_DESCRIPTION }}",
   "private": true,
   "type": "module",
   "engines": {
