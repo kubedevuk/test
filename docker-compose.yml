@@ -1,0 +1,16 @@
+name: { { APP_NAME } }
+
+services:
+  app:
+    build:
+      context: ./nuxt
+      dockerfile: ./Dockerfile
+      args:
+        APP_URL: ${APP_URL:-http://localhost:3000}
+    volumes:
+      - ./build:/app/build
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5" # number of files or file count
+        max-size: "10m" # file size

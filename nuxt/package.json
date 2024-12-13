@@ -1,0 +1,36 @@
+{
+  "name": "tmbeta consulting",
+  "version": "0.1.4",
+  "description": "tm beta consulting ltd || Senior Consultant - Retail, Digital and Process Business Analyst for hire",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "20.12.1",
+    "npm": "10.5.0"
+  },
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxi dev --dotenv ../.env",
+    "dev:host": "nuxi dev --host --dotenv ../.env",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/image": "^1.8.1",
+    "@nuxtjs/seo": "^2.0.2",
+    "arctic": "^1.9.2",
+    "nuxt": "^3.12.4",
+    "ufo": "^1.5.4",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "@lucia-auth/adapter-sqlite": "^3.0.2",
+    "@nuxt/kit": "^3.12.4",
+    "better-sqlite3": "^11.1.2",
+    "kysely": "^0.27.4",
+    "lucia": "^3.2.0",
+    "nanoid": "^5.0.7",
+    "sass": "^1.77.8"
+  }
+}

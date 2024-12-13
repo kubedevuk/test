@@ -1,0 +1,188 @@
+@mixin hover-support {
+  @media not all and (pointer: coarse) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin mobile-xs {
+  @media (max-width: $SIZE_MOBILE_XS) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $SIZE_MOBILE) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $SIZE_MOBILE) {
+    @content;
+  }
+}
+
+.animated {
+  transition: all $TRANSITION ease-in-out;
+}
+
+.no-user,
+.no-cursor {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.disabled {
+  @extend .no-cursor;
+  opacity: 0.8;
+}
+
+.no-break {
+  white-space: nowrap;
+}
+
+.show-mobile-xs {
+  display: none;
+
+  @media (max-width: $SIZE_MOBILE_XS) {
+    display: block;
+
+    table & {
+      display: table-row;
+    }
+  }
+}
+
+.show-mobile {
+  display: none;
+
+  @media (min-width: $SIZE_MOBILE_XS) and (max-width: $SIZE_MOBILE) {
+    display: block;
+
+    table & {
+      display: table-row;
+    }
+  }
+}
+
+// todo bug sometimes can be shown both?
+.show-desktop {
+  display: none;
+
+  @media (min-width: $SIZE_MOBILE) {
+    display: block;
+
+    table & {
+      display: table-row;
+    }
+  }
+}
+
+.color-success {
+  color: $COLOUR-SUCCESS;
+}
+.color-error {
+  color: $COLOUR-ERROR;
+}
+.color-unselected {
+  color: $COLOUR-UNSELECTED;
+}
+.color-disabled {
+  color: $COLOUR-DISABLED;
+}
+.color-bg {
+  color: $COLOUR-BG;
+}
+.color-fg {
+  color: $COLOUR-FG;
+}
+.color-grey {
+  color: $COLOUR-GREY;
+}
+.background-bg {
+  background-color: $COLOUR-BG;
+}
+.background-fg {
+  background-color: $COLOUR-FG;
+}
+
+.gradient-bg {
+  background: $COLOUR-BG;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.center {
+  margin: 0 auto !important;
+}
+
+.row,
+.col {
+  display: flex;
+
+  .grow {
+    flex-grow: 1;
+  }
+
+  &.space-between {
+    justify-content: space-between;
+  }
+}
+
+.row {
+  flex-direction: row;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.ml-1 {
+  margin-left: 0.33rem;
+}
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+
+.hr {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1rem 0;
+
+  hr {
+    height: 1.75px;
+    margin: 0;
+    flex-grow: 1;
+
+    &:nth-of-type(1) {
+      margin-right: 0.5rem;
+    }
+    &:nth-of-type(2) {
+      margin-left: 0.5rem;
+    }
+  }
+}

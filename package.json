@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "docker:build": "docker compose rm -f; docker compose -f docker-compose.yml up --build -d --force-recreate",
+    "docker:up": "docker compose -f docker-compose.yml up -d;",
+    "docker:down": "docker compose down",
+    "dev": "cd ./nuxt; npm run dev;",
+    "lint": "eslint *.js",
+    "format": "prettier --ignore-path .gitignore --write ."
+  }
+}

@@ -1,0 +1,25 @@
+name: on-merge
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [closed]
+
+jobs:
+  deploy-to-VPS:
+    runs-on: self-hosted
+    steps:
+      - name: Cleanup old files
+        run: rm -rf .env; rm -rf ./build
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          clean: false
+      - name: Build the stack
+        run: |
+          touch .env
+          echo APP_URL=${{ vars.APP_URL }} >> .env
+          echo APP_PORT=${{ vars.APP_PORT }} >> .env
+          cat .env
+          sudo docker-compose up -d --build -d --force-recreate

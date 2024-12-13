@@ -1,0 +1,434 @@
+nav {
+  @extend .container;
+
+  max-width: $CONTAINER_LARGE !important;
+  min-height: 10vh;
+}
+
+main {
+  min-height: 72.5vh;
+}
+
+body {
+  color: $COLOUR-FG;
+  background-color: $COLOUR-BG;
+
+  position: relative;
+  min-height: 100vh;
+  padding: 0.5rem;
+  padding-top: 0;
+
+  @include desktop() {
+    padding: 1rem;
+    padding-top: 0;
+  }
+
+  @include mobile-xs() {
+    padding: 0.15rem;
+    padding-top: 0;
+  }
+
+  .toasts {
+    @extend .toasts;
+  }
+
+  button,
+  button[type],
+  input,
+  textarea,
+  select {
+    @extend .animated;
+    @extend .base-control;
+
+    margin: 0.25rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/** TOASTS */
+.toasts {
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  pointer-events: none;
+
+  .toast {
+    display: block;
+    margin: 1rem auto;
+    pointer-events: all;
+
+    padding: 1rem;
+    font-weight: bold;
+  }
+}
+
+hr {
+  border-style: solid;
+}
+
+.hr,
+hr {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hr {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  hr {
+    height: 1.75px;
+    margin: 0;
+    flex-grow: 1;
+
+    &:nth-of-type(1) {
+      margin-right: 0.5rem;
+    }
+    &:nth-of-type(2) {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+strong {
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 250;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-weight: 100;
+  font-size: 3rem;
+}
+
+code {
+  text-wrap: nowrap;
+
+  &.small {
+    font-size: small;
+  }
+}
+
+u {
+  text-underline-offset: 20%;
+  text-decoration-thickness: $LINE_THICKNESS;
+}
+
+ul {
+  padding: 0 0.5rem;
+
+  @include mobile() {
+    padding: 0 0.25rem;
+  }
+
+  li {
+    margin-top: 0.5rem;
+
+    &:first-of-type {
+      margin-top: 1rem;
+    }
+  }
+}
+
+em {
+  font-weight: 300;
+}
+
+.focus {
+  &:focus,
+  &:focus-visible,
+  &:focus-within {
+    outline: 3px solid $COLOUR-BG;
+    box-sizing: border-box;
+  }
+}
+
+.border {
+  border: $LINE_THICKNESS * 0.5 solid $COLOUR-FG;
+  @extend .focus;
+}
+
+.border-dark {
+  border: $LINE_THICKNESS * 0.5 solid $COLOUR-TINT;
+  @extend .focus;
+}
+
+.border-light {
+  @extend .border;
+
+  border: 1px solid $COLOUR-FG;
+}
+
+.shadow {
+  box-shadow: 0 5px 25px $COLOUR-FG;
+}
+
+.shadow-dark {
+  box-shadow: 0 5px 25px $COLOUR-BG;
+}
+
+.column-padding {
+  padding: 1rem 0.66rem;
+
+  @include mobile() {
+    padding: 1rem 0.1rem;
+  }
+
+  @include mobile-xs() {
+    padding: 1rem 0;
+  }
+}
+
+.column-margin {
+  margin: 0 1rem;
+
+  @include desktop() {
+    margin: 0 2rem;
+  }
+}
+
+.no-padding-mobile-xs {
+  @include mobile-xs() {
+    padding: 0;
+  }
+}
+
+.no-margin-mobile-xs {
+  @include mobile-xs() {
+    margin: 0;
+  }
+}
+
+.card {
+  @extend .border;
+  @extend .column-padding;
+
+  position: relative;
+  border-radius: $BORDER_RADIUS;
+
+  .top-left,
+  .top-right {
+    position: absolute;
+    top: 0;
+  }
+
+  .top-left {
+    left: 0;
+  }
+  .top-right {
+    right: 0;
+  }
+}
+
+input,
+textarea,
+select {
+  @extend .focus;
+}
+
+button,
+button[type] {
+  &:focus,
+  &:focus-visible,
+  &:focus-within {
+    outline-width: 0;
+  }
+}
+
+button,
+button[type],
+input,
+textarea,
+select {
+  @extend .animated;
+  @extend .border-light;
+
+  &[disabled],
+  &.disabled {
+    @extend .disabled;
+  }
+
+  &:invalid {
+    outline: 2px solid $COLOUR-ERROR;
+    border-color: $COLOUR-ERROR;
+  }
+
+  &:focus,
+  &:focus-within,
+  &:focus-visible {
+    &:invalid {
+      outline-width: 3px;
+    }
+  }
+}
+
+table {
+  width: 100%;
+
+  tr {
+    td,
+    th {
+      text-align: center;
+    }
+  }
+
+  .table-head-row {
+    th {
+      padding-bottom: 0.5rem;
+    }
+  }
+}
+
+label {
+  display: block;
+  font-weight: 600;
+}
+
+form {
+  text-align: left;
+
+  input,
+  textarea,
+  select {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+
+    &::placeholder {
+      opacity: 0.5;
+    }
+  }
+
+  textarea {
+    text-wrap: wrap !important;
+  }
+}
+
+.base-control {
+  text-wrap: nowrap;
+  padding: 0.3rem 0.6rem;
+  border-radius: $BORDER_RADIUS;
+}
+
+button {
+  &.small {
+    font-size: 0.75rem;
+  }
+
+  @include hover-support() {
+    transform: translate(0, 0);
+  }
+}
+
+.container {
+  @extend .center;
+  max-width: $CONTAINER;
+
+  &.small {
+    max-width: $CONTAINER_SMALL;
+  }
+
+  &.large {
+    max-width: $CONTAINER_LARGE;
+  }
+}
+
+.icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  display: inline-block;
+  vertical-align: middle;
+
+  &.small {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &.large {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+.content-bubble {
+  @extend .column-padding;
+
+  padding-bottom: 0.3rem;
+  border-radius: $BORDER_RADIUS;
+}
+
+.icon-outset {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  top: -0.3rem;
+}
+
+.left {
+  .icon-outset {
+    left: -1.1rem;
+  }
+}
+.right {
+  .icon-outset {
+    right: -1.1rem;
+  }
+}
+
+.info {
+  text-align: right;
+  font-size: 0.75rem;
+  position: relative;
+
+  .icon-outset {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .icon {
+    margin-left: 0.4rem;
+
+    @include mobile-xs() {
+      margin-left: 0.15rem;
+    }
+  }
+
+  &.left {
+    text-align: left;
+    margin-left: 1.25rem;
+  }
+
+  &.right {
+    text-align: right;
+    margin-right: 1.25rem;
+  }
+}
+
+.line,
+.line-vertical {
+  display: inline-block;
+  height: 1rem;
+  min-width: 1rem;
+  position: relative;
+}
+
+.line {
+  border-top: 3px dotted $COLOUR-DISABLED;
+  top: 0.45rem;
+}
+
+.line-vertical {
+  border-left: 3px dotted $COLOUR-DISABLED;
+  left: 0.43rem;
+}

@@ -1,0 +1,5 @@
+{{ APP_URL }} {
+	root * /home/actions-runner/_work/www-tmbeta/www-tmbeta/build/
+	encode gzip
+	file_server
+}
