@@ -66,6 +66,8 @@ Where possible not re-inventing the wheel but using popular 3rd party efforts.
   - If missing copy `.env.example` and rename to `.env`
 - Run Docker compose in detatched mode `npm run docker:up`
 
+SHOULD BE GLOBAL CHANGE
+
 TEST LOCAL CHANGE
 TEST LOCAL CHANGE
 TEST LOCAL CHANGE
